@@ -1,0 +1,152 @@
+/* Media query to change the navigation and form layout for smaller screens */
+@media screen and (max-width: 600px) {
+  nav {
+    /* Changes the direction of the navigation items to column */
+    flex-direction: column;
+    /* Centers the navigation items */
+    align-items: center;
+  }
+
+  nav ul {
+    /* Change direction to column */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    /* Remove the left margin */
+    margin-left: 0;
+    /* Add top margin to form */
+    margin-top: 20px;
+  }
+}
+
+body {
+  /* Set the font family */
+  font-family: 'Poppins';
+  /* Remove margin */
+  margin: 0;
+  /* Set font weight to bold */
+  font-weight: 600;
+}
+
+header {
+  /* background color for header */
+  background-color: #333;
+  /* text color */
+  color: #fff;
+  /* flexbox for header layout */
+  display: flex;
+  /* Add padding */
+  padding: 10px 20px;
+}
+
+nav {
+  /* flexbox for navigation layout */
+  display: flex;
+}
+
+nav a:hover {
+  /* background color on hover */
+  background-color: #fff;
+  /* text color on hover */
+  color: #333;
+}
+
+nav ul {
+  /* Use flexbox for navigation list layout */
+  display: flex;
+  /* Remove list styling */
+  list-style: none;
+  /* Remove margin */
+  margin: 0;
+  /* Remove padding */
+  padding: 0;
+}
+
+nav a {
+  font-family: 'Poppins';
+  font-weight: bold;
+  color: #fff;
+  /* Display as block element */
+  display: block;
+  /* Add padding */
+  padding: 10px 20px;
+  /* Remove text decoration */
+  text-decoration: none;
+}
+
+form {
+  margin-left: 620px;
+  margin-top: 9px;
+}
+
+input[type="text"] {
+  /* Remove border */
+  border: none;
+  padding: 5px;
+}
+
+button[type="submit"] {
+  background-color: white;
+  border: #333;
+  color: #333;
+  padding: 5px 5px;
+}
+
+section {
+  /* Set background image */
+  background-image: url('bg.jpg');
+  /* Set background size to cover entire element */
+  background-size: cover;
+  /* Does not repeat background image */
+  background-repeat: no-repeat;
+  /* Centers background image */
+  background-position: center;
+  /* Set opacity */
+  opacity: 0.7;
+  padding: 20px;
+  text-align: center;
+  /* Sets view port height to 100% */
+  height: 100vh;
+}
+
+section h2 {
+  /* Sets top margin for h2 */
+  margin-top: 270px;
+}
+
+#index {
+  background-color: white;
+}
+
+#about {
+  background-color: white;
+}
+
+#contact {
+  background-color: white;
+}
+
+#hobbies {
+  background-color: white;
+}
+
+#education {
+  background-color: white;
+}
+
+#references {
+  background-color: white;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: small;
+}
+
