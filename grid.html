@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    p {
+      font-family: Roboto;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 25px;
+      margin-top: 5px;
+    }
+
+    .mutual-friends {
+      font-size: 15px;
+      color: gray;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      margin-left: 10px;
+    }
+
+    .btn {
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-right: 8px;
+      padding-left: 8px;
+      border-radius: 3px;
+    }
+
+    .btn:hover {
+      opacity: 0.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 250px 250px 250px;
+      column-gap: 15px;
+
+    }
+
+    .card1,
+    .card2,
+    .card3 {
+      box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+      width: 250px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .pp {
+      width: 100%;
+    }
+
+    .sss {
+      width: 25px;
+      border-radius: 50%;
+    }
+
+    .mutual {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      align-items: center;
+      margin-left: 10px;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <div class="card1">
+      <img class="pp" src="channel-pictures/channel-4.jpeg">
+      <p class="name">Oliver</p>
+      <div class="mutual">
+        <img class="sss" src="channel-pictures/channel-4.jpeg">
+        <p class="mutual-friends">3 mutual friend</p>
+      </div>
+      <button class="btn">Add Friend</button>
+    </div>
+
+    <div class="card1">
+      <img class="pp" src="channel-pictures/channel-4.jpeg">
+      <p class="name">Oliver</p>
+      <div class="mutual">
+        <img class="sss" src="channel-pictures/channel-4.jpeg">
+        <p class="mutual-friends">3 mutual friend</p>
+      </div>
+      <button class="btn">Add Friend</button>
+    </div>
+
+    <div class="card1">
+      <img class="pp" src="channel-pictures/channel-4.jpeg">
+      <p class="name">Oliver</p>
+      <div class="mutual">
+        <img class="sss" src="channel-pictures/channel-4.jpeg">
+        <p class="mutual-friends">3 mutual friend</p>
+      </div>
+      <button class="btn">Add Friend</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

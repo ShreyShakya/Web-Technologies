@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 50px 1fr 70px;
+      width: 370px;
+      align-items: center;
+
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 50px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    p{
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .title {
+      font-weight: 600;
+    }
+
+    .subtitle {
+      color: gray;
+      font-size: 12px;
+    }
+
+    button {
+      color: white;
+      background-color: black;
+      border: solid;
+      border-width: 1px;
+      border-color: lightgray;
+      padding: 8px 12px;
+      border-radius: 7px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img class="profile-pic" src="channel-pictures/moist.jpg">
+    <div class="info">
+      <p class="title">Charles White</p>
+      <p class="subtitle">Youtuber</p>
+      <p class="subtitle">10M Subscribers</p>
+    </div>
+    <button>Follow</button>
+  </div>
+</body>
+
+</html>
