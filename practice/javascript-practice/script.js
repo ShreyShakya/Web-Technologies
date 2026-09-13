@@ -140,4 +140,175 @@ function discountEven(num, i) {
 
 console.log(bill)
 
+//get user name using index
+let users = [
+  { name: "John", age: 25 },
+  { name: "Sarah", age: 30 },
+  { name: "Mike", age: 22 },
+  { name: "Alex", age: 28 }
+]
 
+const getUser = (user) => {
+  return users[user].name
+}
+
+console.log(getUser(2))
+
+// get price using index
+let products = [
+  { name: "Laptop", price: 800 },
+  { name: "Phone", price: 500 },
+  { name: "Mouse", price: 50 },
+  { name: "Keyboard", price: 100 }
+]
+
+const getPrice = (product) => {
+  return products[product].price
+}
+
+console.log(getPrice(3))
+
+// get age using index
+let users = [
+  { name: "John", age: 25 },
+  { name: "Sarah", age: 30 },
+  { name: "Mike", age: 22 },
+  { name: "Alex", age: 28 }
+]
+
+const getAge = (user) => {
+  return users[user].age
+}
+
+console.log(getAge(2))
+
+// arrow function to print age above 18
+let users = [
+  { name: "John", age: 25 },
+  { name: "Sarah", age: 17 },
+  { name: "Mike", age: 30 }
+]
+
+const ageCheck = (user) => {
+  if (user.age >= 18) {
+    console.log(user.name)
+  }
+}
+
+users.forEach(ageCheck)
+
+
+// double and store in new array
+let numbers = [10, 20, 30, 40]
+let doubledNumbers = []
+
+const doubleIt = (number) => {
+  doubledNumbers.push(number * 2)
+}
+
+numbers.forEach(doubleIt)
+
+console.log(doubledNumbers)
+
+// arrow and nested objects
+let products = [
+  { name: "Laptop", price: 800 },
+  { name: "Phone", price: 500 },
+  { name: "Headphones", price: 100 }
+]
+
+let expensiveProducts = []
+
+const checkValue = (product) => {
+  if (product.price >= 500) {
+    expensiveProducts.push(product.name)
+  }
+}
+
+products.forEach(checkValue)
+
+console.log(expensiveProducts)
+
+// arrow and nested objects
+let users = [
+  { name: "John", age: 25 },
+  { name: "Sarah", age: 30 },
+  { name: "Mike", age: 22 }
+]
+
+let names = []
+
+const ageCheck = (user) => {
+  if (user.age >= 25) {
+    names.push(user.name)
+  }
+}
+
+users.forEach(ageCheck)
+
+console.log(names)
+
+// arrow function to get total value
+let products = [
+  { name: "Laptop", price: 800 },
+  { name: "Phone", price: 500 },
+  { name: "Mouse", price: 50 }
+]
+
+let total = 0
+
+const totalValue = (product) => {
+  total = total + product.price
+}
+
+products.forEach(totalValue)
+
+console.log(total)
+
+// list vips & calculate total guests
+
+let attendees = [
+  {
+    name: "Alex",
+    age: 22,
+    ticket: { type: "VIP", guests: 2 }
+  },
+  {
+    name: "Becca",
+    age: 17,
+    ticket: { type: "Standard", guests: 1 }
+  },
+  {
+    name: "Chris",
+    age: 25,
+    ticket: { type: "Standard", guests: 0 }
+  },
+  {
+    name: "Diana",
+    age: 30,
+    ticket: { type: "VIP", guests: 1 }
+  }
+]
+
+let vipNames = []
+let totalPeople = 0
+
+const processAttendee = (attendee) => {
+  if (attendee.ticket.type === "VIP") {
+    vipNames.push(attendee.name)
+  }
+  
+  totalPeople = totalPeople + 1 + attendee.ticket.guests
+  
+   if (attendee.age >= 18) {
+    console.log(attendee.name + " can go")
+  } else {
+    console.log(attendee.name + " cant go")
+  }
+  
+}
+ 
+attendees.forEach(processAttendee)
+
+console.log(vipNames)
+console.log(totalPeople)
