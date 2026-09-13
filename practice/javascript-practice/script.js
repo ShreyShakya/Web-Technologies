@@ -100,5 +100,44 @@ function totalPeople(user2){
 console.log(vipNames)
 console.log(totalPeopleAtFestival)
 
-// combine into one single loop
+// rank racers
+
+let racers = ["Alice", "Bob", "Charlie"]
+
+racers.forEach(ranker)
+
+function ranker(name, i) {
+  console.log("Rank " + (i + 1) + ": " + name)
+}
+
+// add id to null
+
+let products = [
+  { name: "Laptop", id: null },
+  { name: "Phone", id: null },
+  { name: "Tablet", id: null }
+]
+
+products.forEach(idGiver)
+
+function idGiver(num, i) {
+  num.id = i
+}
+
+console.log(products)
+
+// 50% off if even
+
+let bill = [10, 20, 30, 40]
+
+bill.forEach(discountEven)
+
+function discountEven(num, i) {
+  if (num % 2 === 0) {
+    bill[i] = num * 0.5
+  }
+}
+
+console.log(bill)
+
 
