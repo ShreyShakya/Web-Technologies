@@ -312,3 +312,66 @@ attendees.forEach(processAttendee)
 
 console.log(vipNames)
 console.log(totalPeople)
+
+// sorting in appropriate arrays
+let products = [
+  {
+    name: "Laptop",
+    price: 1200,
+    stock: 5,
+    category: { type: "Electronics", warranty: "2 years" }
+  },
+  {
+    name: "Book",
+    price: 15,
+    stock: 50,
+    category: { type: "Books", warranty: "None" }
+  },
+  {
+    name: "Headphones",
+    price: 150,
+    stock: 0,
+    category: { type: "Electronics", warranty: "1 year" }
+  },
+  {
+    name: "Desk Chair",
+    price: 300,
+    stock: 8,
+    category: { type: "Furniture", warranty: "3 years" }
+  },
+  {
+    name: "Notebook",
+    price: 5,
+    stock: 200,
+    category: { type: "Books", warranty: "None" }
+  }
+]
+
+let inStock = []
+let totalRevenue = 0
+let noWarrantyCount = 0
+
+const checkStock = (product) => {
+  // prints which electronic is in what category
+  console.log (product.name + " is in " + product.category.type)
+  // pushes products which are in stock to inStock array
+  if (product.stock > 0) {
+    inStock.push(product.name)
+  }
+  // calculates the total revenue
+  totalRevenue = totalRevenue + product.price * product.stock
+  // prints products that are electronics and have a warranty
+  if (product.category.type === "Electronics" && product.category.warranty != "None") {
+    console.log("Electronics with warranty: " + product.name)
+  }
+  // no warranty count
+  if (product.category.warranty === "None") {
+    noWarrantyCount = noWarrantyCount + 1
+  }
+}
+
+products.forEach(checkStock)
+
+console.log("Products in stock: " + inStock)
+console.log("total revenue: " + totalRevenue)
+console.log("Products with no warranty: " + noWarrantyCount)
