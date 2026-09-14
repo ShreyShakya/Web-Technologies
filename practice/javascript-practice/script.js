@@ -375,3 +375,124 @@ products.forEach(checkStock)
 console.log("Products in stock: " + inStock)
 console.log("total revenue: " + totalRevenue)
 console.log("Products with no warranty: " + noWarrantyCount)
+
+// map usernames
+const users = [
+  { name: "Alice", role: "Admin" },
+  { name: "Bob", role: "User" },
+  { name: "Charlie", role: "Guest" }
+];
+
+const userName = users.map((user) => {
+  return user.name
+})
+
+console.log(userName)
+
+// add fee using map
+const prices = [10, 20, 30, 40]
+
+const totalCosts = prices.map((price) => {
+  return "$" + price + 5
+})
+
+// add emails using map
+const names = ["john", "sarah", "alex"]
+const employeeEmails = names.map((name) => {
+  return name + "@company.com"
+})
+
+console.log(employeeEmails)
+
+// calculate stock vaues
+const items = [
+  { name: "Pen", price: 2, quantity: 10 },
+  { name: "Marker", price: 5, quantity: 4 }
+];
+
+const stockValues = items.map((item) => {
+  return item.price * item.quantity
+})
+
+console.log(stockValues)
+
+// --------
+const order = [
+  { name: "Premium Coffee Beans", price: 20, quantity: 3, isFragile: false },
+  { name: "Glass Coffee Mug", price: 15, quantity: 2, isFragile: true },
+  { name: "Electric Milk Frother", price: 40, quantity: 1, isFragile: false }
+];
+
+let totalBill = 0;
+let fragileItemsCount = 0;
+
+order.forEach((bill) => {
+  
+  totalBill = totalBill + (bill.price * bill.quantity)
+  
+  if (bill.isFragile === true) {
+  fragileItemsCount += 1
+  }
+})
+
+const receiptNames = order.map((name) => {
+  return name.name + " x" + name.quantity
+})
+
+console.log(totalBill)
+console.log(receiptNames)
+console.log(fragileItemsCount)
+
+// grade, attendence, score
+const students = [
+  { name: "Aria", testScore: 85, attendance: 95, isNewStudent: false },
+  { name: "Braxton", testScore: 60, attendance: 70, isNewStudent: true },
+  { name: "Clara", testScore: 92, attendance: 100, isNewStudent: false }
+];
+
+let classTotalScore = 0;
+let perfectAttendanceCount = 0;
+
+students.forEach((student) => {
+  classTotalScore += student.testScore 
+  
+  if (student.attendance === 100) {
+    perfectAttendanceCount += 1
+  }
+})
+
+const honorRollCertificates = students.map((student) => {
+  if (student.testScore > 80) {
+    return student.name + " - Grade: " + student.testScore
+  }
+})
+
+console.log("Total Score: " + classTotalScore)
+console.log("Perfect Attendence: " + perfectAttendanceCount)
+console.log(honorRollCertificates)
+
+// movie theater revenue
+const movies = [
+  { title: "Sci-Fi Odyssey", ticketPrice: 12, ticketsSold: 100, is3D: true },
+  { title: "Romantic Comedy", ticketPrice: 10, ticketsSold: 50, is3D: false },
+  { title: "Action Blast", ticketPrice: 15, ticketsSold: 200, is3D: true }
+];
+
+let totalTheaterRevenue = 0;
+let threeDMovieCount = 0;
+
+movies.forEach((movie) => {
+  totalTheaterRevenue += movie.ticketPrice * movie.ticketsSold
+  
+  if(movie.is3D === true) {
+    threeDMovieCount += 1
+  }
+})
+
+const billboardTitles = movies.map((movie) => {
+  return movie.title.toUpperCase()
+})
+
+console.log(totalTheaterRevenue)
+console.log(threeDMovieCount)
+console.log(billboardTitles)
