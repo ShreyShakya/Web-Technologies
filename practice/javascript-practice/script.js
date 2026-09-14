@@ -608,3 +608,22 @@ const expensiveProductNames = (productArray) => {
 }
 
 console.log(expensiveProductNames(products1))
+
+// Write a function that:
+// - Gets products that have stock > 0
+// - Returns just their NAMES (not the whole objects)
+// Use method chaininggit 
+
+let products = [
+  { id: 1, name: 'Laptop', stock: 15 },
+  { id: 2, name: 'Mouse', stock: 0 },
+  { id: 3, name: 'Keyboard', stock: 8 }
+]
+
+function inStock(arr) {
+  return arr
+    .filter(product => product.stock > 0)
+    .map(product => product.name)
+}
+
+console.log(inStock(products))
