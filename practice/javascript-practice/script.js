@@ -496,3 +496,115 @@ const billboardTitles = movies.map((movie) => {
 console.log(totalTheaterRevenue)
 console.log(threeDMovieCount)
 console.log(billboardTitles)
+
+// filter ()
+
+let prices = [150, 45, 200, 30, 99]
+
+const cheapPrices = prices.filter((amount) => {
+    return amount < 100
+})
+
+console.log(cheapPrices)
+
+// ----- 
+
+const inventory = [
+  { name: "Notebook", stock: 12 },
+  { name: "Pencil", stock: 0 },
+  { name: "Eraser", stock: 5 }
+];
+
+const availableItems = inventory.filter((item) => {
+  return item.stock > 0
+})
+
+console.log(availableItems)
+
+// -----
+
+const team = [
+  { name: "Alex", isAdmin: true },
+  { name: "Blake", isAdmin: false },
+  { name: "Charlie", isAdmin: true }
+];
+
+const adminUsers = team.filter((name) => {
+  return name.isAdmin === true
+})
+
+console.log(adminUsers)
+
+//  shothand arrow
+//  const triples = numbers.map(num => num * 3)
+//  const usernames = lowerNames.map(name => name.toLowerCase())
+//  const adults = ages.filter(age => age >= 18)
+//  const rawPrices = items.map(item => item.price)
+//  names.forEach(name => console.log(name))
+
+let students = [
+  { name: 'Alex', score: 85 },
+  { name: 'Becca', score: 92 },
+  { name: 'Chris', score: 78 },
+  { name: 'Diana', score: 88 }
+]
+
+const getHighScore = (arr) => {return arr.filter(student => student.score >= 85)}
+
+console.log(getHighScore(students))
+
+function getNames(manual) {
+  return manual.map(student => student.name)
+}
+
+console.log(getNames(students))
+
+// ------
+let products1 = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Mouse', price: 25 },
+  { name: 'Keyboard', price: 85 },
+  { name: 'Monitor', price: 300 }
+]
+
+let products2 = [
+  { name: 'Monitor', price: 1200 },
+  { name: 'Keyboard', price: 25 },
+  { name: 'Mouse', price: 85 },
+  { name: 'Laptop', price: 300 }
+]
+
+// STANDARD FUNCTION
+function getName(arr) {
+  return arr.map(product => product.name)
+}
+
+console.log(getName(products1))
+
+//NAMED ARROW FUNCTION
+const productCheap = (arr1) => arr1.filter(product => product.price > 100)
+
+console.log(productCheap(products2))
+
+//INLINE ARROW store in variable
+const doublePrice = products1.map(product => product.price * 2)
+console.log(doublePrice)
+
+//STANDARD FUNCTION
+function doubleValue(arr2) {
+  return arr2.filter(item => item.price > 50)
+}
+console.log(doubleValue(products2))
+
+//NAMED ARROW FUNCTION
+const upperCase = (arr) => arr.map(fname => fname.name.toUpperCase())
+console.log(upperCase(products1))
+
+// COMBINED
+const expensiveProductNames = (productArray) => {
+  return productArray
+  .filter(item => item.price > 100)
+  .map(item => item.name)
+}
+
+console.log(expensiveProductNames(products1))
