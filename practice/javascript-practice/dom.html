@@ -1,10 +1,50 @@
-<h1 id="title">Registration</h1>
+<style>
+  body {
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-<input id="nameInput" placeholder="Enter your name">
-<input id="ageInput" placeholder="Enter your age">
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
 
-<button id="registerBtn">Register</button>
+  input {
+    margin-bottom: 8px;
+    padding: 8px;
+  }
 
-<p id="message">...</p>
+  button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 182px;
+    
+  }
+
+  button:hover {
+    background-color: white;
+    color: black;
+  }
+
+</style>
+
+<div>
+  <h1 id="title">Registration</h1>
+  <input id="nameInput" placeholder="Enter your name">
+  <input id="ageInput" placeholder="Enter your age">
+  <button id="registerBtn">Register</button>
+  <p id="message"></p>
+</div>
 
 <script src="script.js"></script>
