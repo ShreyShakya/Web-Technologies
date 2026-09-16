@@ -691,4 +691,67 @@ console.log(productNames)
 console.log(getProductPrice(2))
 console.log(totalValue)
 
-// ---------
+let employees = [
+  { id: 1, name: 'Alice', salary: 50000, department: 'Engineering' },
+  { id: 2, name: 'Bob', salary: 45000, department: 'Sales' },
+  { id: 3, name: 'Charlie', salary: 60000, department: 'Engineering' },
+  { id: 4, name: 'Diana', salary: 55000, department: 'HR' },
+  { id: 5, name: 'Eve', salary: 48000, department: 'Sales' }
+]
+
+// EXERCISE 1: Standard function
+// Gets names of employees in Engineering department
+
+function engineeringNames(arr) {
+  return arr.filter(employee => employee.department === 'Engineering').map(employee => employee.name)
+}
+
+console.log(engineeringNames(employees))
+
+// EXERCISE 2: Named arrow function
+// Gets employees with salary > 50000
+
+const highEarners = (arr) => { return arr.filter(employee => employee.salary > 50000).map(employee => employee.name)}
+
+console.log(highEarners(employees))
+
+// EXERCISE 3: Inline arrow (store in variable)
+// Get all employee names (just the names, not objects)
+
+const allNames = employees.map(employee => employee.name)
+
+console.log(allNames)
+
+// EXERCISE 4: Standard function with chaining
+// Get names of Sales employees, all UPPERCASE
+
+function salesDepartmentNamesUppercase(arr) {
+  return arr.filter(employee => employee.department === 'Sales').map(employee => employee.name.toUpperCase())
+}
+
+console.log(salesDepartmentNamesUppercase(employees))
+
+// EXERCISE 5: Named arrow function with chaining
+// Get salaries of Engineering employees, add 5000 to each
+
+const engineeringSalariesWithBonus = (arr) => arr.filter(employee => employee.department === 'Engineering').map(employee => employee.salary + 5000)
+
+console.log(engineeringSalariesWithBonus(employees))
+
+// EXERCISE 6: HARDEST - Combine everything
+// Write a function that:
+// - Takes an array of employees
+// - Filters for Sales department ONLY
+// - Maps to get salaries
+// - ADDS 10% bonus to each salary (multiply by 1.1)
+// Use method chaining
+
+function salesWithBonus(arr) {
+  return arr.filter(employee => employee.department === 'Sales').map(employee => employee.salary * 1.1)
+}
+
+console.log(salesWithBonus(employees))
+
+
+
+
