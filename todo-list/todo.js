@@ -29,6 +29,13 @@ submitBtn.addEventListener("click", function (event) {
   removeBtn.textContent = "x"
 
   removeBtn.addEventListener("click", function () {
+    const index = taskListData.indexOf(notesList.textContent.replace("x", "").trim())
+    
+    if (index > -1) {
+      taskListData.splice(index, 1)
+      saveData()
+    }
+    
     notesList.remove()
   })
 
