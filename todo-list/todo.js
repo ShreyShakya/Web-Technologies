@@ -12,6 +12,27 @@ function loadData() {
   taskListData = JSON.parse(localStorage.getItem('todos')) || []
 }
 
+function renderUI() {
+  todoContainer.innerHTML = ""
+  
+  taskListData.forEach((taskText, index) => {
+    const notesList = document.createElement("li")
+    notesList.textContent = taskText
+
+    const removeBtn = document.createElement("button")
+    removeBtn.textContent = "x"
+
+    removeBtn.addEventListener("click", function () {
+      taskListData.splice(index, 1)
+      saveData()
+      renderUI()
+    })
+
+    notesList.append(removeBtn)
+    todoContainer.append(notesList)
+  })
+}
+
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault()
 
@@ -21,25 +42,9 @@ submitBtn.addEventListener("click", function (event) {
 
   taskListData.push(todoInput.value)
   saveData()
-
-  const notesList = document.createElement("li")
-  notesList.textContent = todoInput.value
-
-  const removeBtn = document.createElement("button")
-  removeBtn.textContent = "x"
-
-  removeBtn.addEventListener("click", function () {
-    const index = taskListData.indexOf(notesList.textContent.replace("x", "").trim())
-    
-    if (index > -1) {
-      taskListData.splice(index, 1)
-      saveData()
-    }
-    
-    notesList.remove()
-  })
-
-  notesList.append(removeBtn)
-  todoContainer.append(notesList)
+  renderUI()
   todoInput.value = ""
 })
+
+loadData()
+renderUI()
