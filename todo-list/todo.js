@@ -4,12 +4,23 @@ const todoContainer = document.querySelector("ul")
 
 let taskListData = []
 
+function saveData() {
+  localStorage.setItem('todos', JSON.stringify(taskListData))
+}
+
+function loadData() {
+  taskListData = JSON.parse(localStorage.getItem('todos')) || []
+}
+
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault()
 
   if (todoInput.value.trim() === "") {
     return;
   }
+
+  taskListData.push(todoInput.value)
+  saveData()
 
   const notesList = document.createElement("li")
   notesList.textContent = todoInput.value
