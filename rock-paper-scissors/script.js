@@ -57,3 +57,15 @@ for (let i = 0; i < 5; i++) {
     console.log(`Computer's score: ${computerScore}`)
 }
 
+function finalScore(humanScore, computerScore) {
+  if (humanScore > computerScore) {
+    return "Human won!"
+  } else if (computerScore > humanScore) {
+    return "Computer won!"
+  } else {
+    return "It's a draw!"
+  }
+}
+
+console.log(finalScore(humanScore, computerScore))
+
