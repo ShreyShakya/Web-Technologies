@@ -752,6 +752,68 @@ function salesWithBonus(arr) {
 
 console.log(salesWithBonus(employees))
 
+// -------
+
+let arr = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10]
+let sum = 0
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 === 0) {
+    sum = sum + arr[i] * 3
+  }
+}
+
+console.log(sum)
+
+// ---------
+
+let arr = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10]
+
+let newArr = arr.filter(number => number % 2 === 0)
+newArr = newArr.map(number => number * 3)
+newArr = newArr.reduce((acc, elem) => acc + elem, 0)
 
 
+// -----sort() 
+let arr = [5, 2, 1, -10, 8];
+
+let newArr = arr.sort((a, b) => b - a)
+
+console.log(newArr)
+
+//--------
+let arr = ["HTML", "JavaScript", "CSS"];
+
+function sortedArr(arr) {
+  return [...arr].sort()
+}
+
+console.log(arr)
+console.log(sortedArr(arr))
+
+// ------repeat string--------
+function repeatString(a, b) {
+  let value = a
+  for (let i = 1; i < b; i++ ) {
+    value = value + a
+  }
+  return value
+}
+
+console.log(repeatString('hi', 3))
+
+//--------reverse string--------
+function reverseString(word) {
+  return word.split("").reverse().join("")
+}
+
+console.log(reverseString('Hello World'))
+
+//-------------
+function removeFromArray(arr, i) {
+   return arr.filter(num => num != i)
+}
+
+let arr = [1, 2, 3, 4, 5]
+
+console.log(removeFromArray(arr, 3))
 
