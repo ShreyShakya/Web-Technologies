@@ -1,28 +1,28 @@
 // Print all numbers
 let numbers = [12, 25, 8, 40, 17]
 
-for (let i=0; i < numbers.length; i++) {
+for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i])
 }
 
 // Print only the even-indexed items
 let names = ["John", "Sarah", "Mike", "Lisa", "David", "Alex"]
 
-for (let i=0; i < names.length; i=i+2) {
+for (let i = 0; i < names.length; i = i + 2) {
   console.log(names[i])
 }
 
 // Add 10 to every number and print the result
 let numbers1 = [5, 15, 25, 35, 45]
 
-for (let i=0; i < numbers1.length; i++) {
+for (let i = 0; i < numbers1.length; i++) {
   console.log(numbers1[i] + 10)
 }
 
 // Change the array
 let numbers2 = [10, 20, 30, 40, 50]
 
-for (let i=0; i < numbers2.length; i++) {
+for (let i = 0; i < numbers2.length; i++) {
   numbers2[i] = numbers2[i] * 2;
 }
 
@@ -38,10 +38,10 @@ let rooms = [
 
 rooms.forEach(onlySafe)
 
-function onlySafe(check){
+function onlySafe(check) {
   if (check.safe === true) {
     console.log(check.name + " is safe")
-    
+
   }
 }
 
@@ -87,14 +87,14 @@ let totalPeopleAtFestival = 0
 attendees.forEach(updateNames)
 attendees.forEach(totalPeople)
 
-function updateNames(user){
+function updateNames(user) {
   if (user.ticket.type === "VIP") {
     vipNames.push(user.name)
   }
 }
 
-function totalPeople(user2){
-  totalPeopleAtFestival = totalPeopleAtFestival + (1+ user2.ticket.guests)
+function totalPeople(user2) {
+  totalPeopleAtFestival = totalPeopleAtFestival + (1 + user2.ticket.guests)
 }
 
 console.log(vipNames)
@@ -297,17 +297,17 @@ const processAttendee = (attendee) => {
   if (attendee.ticket.type === "VIP") {
     vipNames.push(attendee.name)
   }
-  
+
   totalPeople = totalPeople + 1 + attendee.ticket.guests
-  
-   if (attendee.age >= 18) {
+
+  if (attendee.age >= 18) {
     console.log(attendee.name + " can go")
   } else {
     console.log(attendee.name + " cant go")
   }
-  
+
 }
- 
+
 attendees.forEach(processAttendee)
 
 console.log(vipNames)
@@ -353,7 +353,7 @@ let noWarrantyCount = 0
 
 const checkStock = (product) => {
   // prints which electronic is in what category
-  console.log (product.name + " is in " + product.category.type)
+  console.log(product.name + " is in " + product.category.type)
   // pushes products which are in stock to inStock array
   if (product.stock > 0) {
     inStock.push(product.name)
@@ -427,11 +427,11 @@ let totalBill = 0;
 let fragileItemsCount = 0;
 
 order.forEach((bill) => {
-  
+
   totalBill = totalBill + (bill.price * bill.quantity)
-  
+
   if (bill.isFragile === true) {
-  fragileItemsCount += 1
+    fragileItemsCount += 1
   }
 })
 
@@ -454,8 +454,8 @@ let classTotalScore = 0;
 let perfectAttendanceCount = 0;
 
 students.forEach((student) => {
-  classTotalScore += student.testScore 
-  
+  classTotalScore += student.testScore
+
   if (student.attendance === 100) {
     perfectAttendanceCount += 1
   }
@@ -483,8 +483,8 @@ let threeDMovieCount = 0;
 
 movies.forEach((movie) => {
   totalTheaterRevenue += movie.ticketPrice * movie.ticketsSold
-  
-  if(movie.is3D === true) {
+
+  if (movie.is3D === true) {
     threeDMovieCount += 1
   }
 })
@@ -502,7 +502,7 @@ console.log(billboardTitles)
 let prices = [150, 45, 200, 30, 99]
 
 const cheapPrices = prices.filter((amount) => {
-    return amount < 100
+  return amount < 100
 })
 
 console.log(cheapPrices)
@@ -549,7 +549,7 @@ let students = [
   { name: 'Diana', score: 88 }
 ]
 
-const getHighScore = (arr) => {return arr.filter(student => student.score >= 85)}
+const getHighScore = (arr) => { return arr.filter(student => student.score >= 85) }
 
 console.log(getHighScore(students))
 
@@ -603,8 +603,8 @@ console.log(upperCase(products1))
 // COMBINED
 const expensiveProductNames = (productArray) => {
   return productArray
-  .filter(item => item.price > 100)
-  .map(item => item.name)
+    .filter(item => item.price > 100)
+    .map(item => item.name)
 }
 
 console.log(expensiveProductNames(products1))
@@ -668,13 +668,13 @@ const availableProducts = products.filter(product => product.stock > 0).map(prod
 
 const productNames = products.map(product => product.name.toUpperCase())
 
- function checkProduct(name) {
-   if (name.stock > 0) {
-     console.log(`${name.name} is available`)
-   } else {
-     console.log(`${name.name} is not available`)
-   }
- }
+function checkProduct(name) {
+  if (name.stock > 0) {
+    console.log(`${name.name} is available`)
+  } else {
+    console.log(`${name.name} is not available`)
+  }
+}
 
 function getProductPrice(index) {
   return products[index].price
@@ -711,7 +711,7 @@ console.log(engineeringNames(employees))
 // EXERCISE 2: Named arrow function
 // Gets employees with salary > 50000
 
-const highEarners = (arr) => { return arr.filter(employee => employee.salary > 50000).map(employee => employee.name)}
+const highEarners = (arr) => { return arr.filter(employee => employee.salary > 50000).map(employee => employee.name) }
 
 console.log(highEarners(employees))
 
@@ -754,7 +754,7 @@ console.log(salesWithBonus(employees))
 
 // -------
 
-let arr = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10]
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let sum = 0
 for (let i = 0; i < arr.length; i++) {
   if (arr[i] % 2 === 0) {
@@ -766,7 +766,7 @@ console.log(sum)
 
 // ---------
 
-let arr = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10]
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 let newArr = arr.filter(number => number % 2 === 0)
 newArr = newArr.map(number => number * 3)
@@ -793,7 +793,7 @@ console.log(sortedArr(arr))
 // ------repeat string--------
 function repeatString(a, b) {
   let value = a
-  for (let i = 1; i < b; i++ ) {
+  for (let i = 1; i < b; i++) {
     value = value + a
   }
   return value
@@ -810,10 +810,97 @@ console.log(reverseString('Hello World'))
 
 //-------------
 function removeFromArray(arr, i) {
-   return arr.filter(num => num != i)
+  return arr.filter(num => num != i)
 }
 
 let arr = [1, 2, 3, 4, 5]
 
 console.log(removeFromArray(arr, 3))
 
+// ------------
+function sumAll(a, b) {
+  let total = 0
+  if (typeof a != 'number' || typeof b != 'number' || a < 0 || b < 0) {
+    return "ERROR!"
+  }
+  if (a < b) {
+    for (let i = a; i <= b; i++) {
+      total = total + i
+    }
+  } else if (a > b) {
+      for (let i = b; i <= a; i++) {
+        total = total + i
+      }
+    }
+  return total
+}
+console.log(sumAll(3, 2))
+
+// ------------
+let year
+
+function isLeapYear(year) {
+  if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+console.log(isLeapYear(2028))
+
+//------------
+function convertToCelcius(temp) {
+  return Number(((temp - 32) * (5 / 9)).toFixed(1))
+}
+function convertToFarenheit(temp) {
+  return Number(((temp * (9 / 5)) + 32).toFixed(1))
+}
+
+
+console.log(convertToFarenheit(90))
+console.log(convertToCelcius(30))
+
+// ---------------
+let arr = [3, 8, 9, 4, 0, 15, 13, 6, 7]
+let newArr = arr.filter(num => num % 2 != 0)
+console.log(newArr)
+newArr = newArr.map(num => num * 2)
+newArr = newArr.reduce((accumulator, initialValue) => accumulator * initialValue)
+
+//-------------
+function wordSpacer(word, count) {
+  let newWord = ""
+  for (let i = 1; i <= count; i++) {
+    if (i === count) {
+      newWord += word
+    } else {
+      newWord += word + "-" 
+    }
+  }
+  return newWord
+}
+
+console.log(wordSpacer('hey', 3))
+
+//--------------
+function countEven(num1, num2) {
+  let even = []
+  if (num1 < num2){
+    for (let i = num1; i <= num2; i++) {
+    if ( i % 2 === 0) {
+      even.push(i)
+    }
+  }
+  } else if (num1 > num2) {
+    for (let i = num1; i >= num2; i--) {
+    if ( i % 2 === 0) {
+      even.push(i)
+    }
+  } 
+}
+  return even
+}
+
+let result = countEven(8, 2)
+console.log(result.length)
