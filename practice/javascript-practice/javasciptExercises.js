@@ -931,13 +931,19 @@ console.log(evenNum)
 
 //-------------
 
-let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let arr = [4, 6, 3, 7, 2, 9, 23, 65, 78, 2, 583, 24]
 
-function findMaxNum(arr) {
-  return Math.max(...arr)
+function findLargest(array) {
+  let max = array[0]
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+    max = array[i]
+    }
+  }
+  return max
 }
 
-console.log(findMaxNum(num))
+console.log(findLargest(arr))
 
 //-------------
 
@@ -960,7 +966,14 @@ function fullName(arr, i) {
 
 console.log(fullName(user, 1))
 
-//------------Keys----------------
+//--------------------------
+
+let laptop = {
+  brand: "Lenovo",
+  ram: "16GB",
+  storage: "512GB SSD",
+  os: "Fedora Linux"
+};
 
 //----------------------------
 let items = [{name: "Shoes", price: 500 }, {name: "Shirt", price: 70 }, {name: "Pants", price: 80 }, {name: "Hat", price: 125 }]
@@ -997,25 +1010,36 @@ function reverseString(n) {
 
 console.log(reverseString(name))
 
+//------------------------------------
+function isPalindrome(name) {
+  if (name.split("").reverse().join("") === name) {
+    return `${name} is a palindrome`
+  } else {
+    return `${name} is not a palindrome`
+  }
+}
+
+console.log(isPalindrome('racecar'))
+
 //--------------------------------------
-let name = 'uoiea'
+let name = 'horse'
 
 function vowelCount(name) {
-  count = 0
-  for (let i = 1; i <= name.length; i++) {
-    if (name.includes('a')) {
+  let count = 0
+  for (let i = 0; i < name.length; i++) {
+    if (name[i] === 'a') {
       count++
-    } else if (name.includes('e')) {
+    } else if (name[i] === 'e') {
       count++
-    } else if (name.includes('i')) {
+    } else if (name[i] === 'i') {
       count++
-    } else if (name.includes('o')) {
+    } else if (name[i] === 'o') {
       count++
-    } else if (name.includes('u')) {
+    } else if (name[i] === 'u') {
       count++
     }
+  } 
   return count
- } 
 }
 
 console.log(vowelCount(name))
@@ -1061,4 +1085,3 @@ function factorial(num) {
 
 let newFactorial = factorial(num)
 console.log(newFactorial)
-
