@@ -977,3 +977,88 @@ let totalPrice2 = total
 items.forEach(totalPrice)
 
 console.log(total)
+
+//-------------------------------
+let items = [{name: "Shoes", price: 500, inStock: true }, {name: "Shirt", price: 70, inStock: true  }, {name: "Pants", price: 80, inStock: false  }, {name: "Hat", price: 125, inStock: true  }]
+
+function inStock(arr) {
+  return arr.filter(item => item.inStock === true).map(item => item.name)
+}
+
+console.log("Available for purchase: " + inStock(items))
+
+//-----------String & Logic Challenges---------------
+
+let name = 'fedora'
+
+function reverseString(n) {
+  return n.split("").reverse().join("")
+}
+
+console.log(reverseString(name))
+
+//--------------------------------------
+let name = 'uoiea'
+
+function vowelCount(name) {
+  count = 0
+  for (let i = 1; i <= name.length; i++) {
+    if (name.includes('a')) {
+      count++
+    } else if (name.includes('e')) {
+      count++
+    } else if (name.includes('i')) {
+      count++
+    } else if (name.includes('o')) {
+      count++
+    } else if (name.includes('u')) {
+      count++
+    }
+  return count
+ } 
+}
+
+console.log(vowelCount(name))
+
+//------------------------------
+let num = 30
+
+for (let i = 1; i <= num; i++){
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz')
+  } else if (i % 3 === 0){
+    console.log('Fizz')
+  } else if (i % 5 === 0) {
+    console.log('Buzz')
+  } else {
+    console.log(i)
+  }
+}
+
+//-----------Function Mechanics---------------
+
+function convertToCelcius(temp) {
+  return Number(((temp - 32) * (5 / 9)).toFixed(1))
+}
+function convertToFarenheit(temp) {
+  return Number(((temp * (9 / 5)) + 32).toFixed(1))
+}
+
+
+console.log(convertToFarenheit(90))
+console.log(convertToCelcius(30))
+
+//-----------------------------------------
+let num = 5
+
+function factorial(num) {
+  let count = 1
+  for (let i = num; i >= 1; i--) {
+    count = count * i
+  }
+  return count
+}
+
+let newFactorial = factorial(num)
+console.log(newFactorial)
+
