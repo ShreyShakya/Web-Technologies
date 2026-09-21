@@ -904,3 +904,76 @@ function countEven(num1, num2) {
 
 let result = countEven(8, 2)
 console.log(result.length)
+
+//---------Array Manipulation--------
+
+let arr1 = [2, 4, 6, 8, 10]
+function doubled(arr) {
+  return arr.map(num => num * 2)
+}
+
+let arr2 = doubled(arr1)
+console.log(arr1)
+console.log(arr2)
+
+//-------------
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function filterEven(arr) {
+  return arr.filter(num => num % 2 === 0)
+}
+
+let evenNum = filterEven(num)
+
+console.log(num)
+console.log(evenNum)
+
+//-------------
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function findMaxNum(arr) {
+  return Math.max(...arr)
+}
+
+console.log(findMaxNum(num))
+
+//-------------
+
+
+let item = ['table', 'car', 'laptop', 'table', 'phone', 'laptop', 'tv']
+
+function removeDuplicates(arr) {
+  return arr.filter((name, index) => arr.indexOf(name) === index)
+}
+
+console.log(removeDuplicates(item))
+
+//---------Object & Data Handling--------
+
+let user = [{name: 'shrey', lastName: 'shakya'}, {name: 'john', lastName: 'doe'}, {name: 'jane', lastName: 'doe'}]
+
+function fullName(arr, i) {
+  return arr[i].name + " " +arr[i].lastName
+}
+
+console.log(fullName(user, 1))
+
+//------------Keys----------------
+
+//----------------------------
+let items = [{name: "Shoes", price: 500 }, {name: "Shirt", price: 70 }, {name: "Pants", price: 80 }, {name: "Hat", price: 125 }]
+
+let total = 0
+
+function totalPrice(arr) {
+  total += arr.price
+  return total
+}
+
+let totalPrice2 = total
+
+items.forEach(totalPrice)
+
+console.log(total)
