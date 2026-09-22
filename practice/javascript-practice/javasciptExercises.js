@@ -1158,3 +1158,66 @@ function countTarget(arr, target) {
   return count
 }
 countTarget([5, 2, 5, 1, 5, 4], 5)
+
+//------------------------
+let userScores = [
+  ["Shrey", 95],
+  ["Alex", 88],
+  ["Sarah", 92]
+];
+
+function findHighestScorer(arr) {
+  let maxScore = arr[0][1]
+  for (let i = 0; i < userScores.length; i++) {
+    if (arr[i][1] > maxScore) {
+      maxScore = arr[i][1]
+    }
+  }
+  return maxScore
+}
+
+console.log(findHighestScorer(userScores))
+
+//------------------------
+let grid = [[1, 2, 3], [4, 5, 6]];
+
+function calcTotal(arr) {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      total += arr[i][j]
+    }
+  }
+ return total
+}
+
+console.log(calcTotal(grid))
+
+//------------------------
+let grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+function findInGrid(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++)
+      if (arr[i][j] === target) {
+        return true
+      }
+  }
+  return false
+}
+  
+console.log(findInGrid(grid, 9))
+
+//------------------------
+let prices = [15, 120, 45, 200]
+
+function censorPrices(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      arr[i] = "EXPENSIVE"
+    }
+  }
+  return arr
+}
+
+console.log(censorPrices(prices))
