@@ -1085,3 +1085,76 @@ function factorial(num) {
 
 let newFactorial = factorial(num)
 console.log(newFactorial)
+
+//----------------------------------
+let num = Number(prompt("Enter a number: "))
+
+function multiplication(num) {
+  let result = ""
+  for (let i = 1; i <= 10; i++) {
+    result += `${num} x ${i} = ${num * i} \n`
+  }
+  return result
+}
+
+console.log(multiplication(num))
+
+//-----------------------------
+let num = [10, 37, 29, 56, 83, 36]
+
+function isLargest(num) {
+  let max = num[0]
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] > max) {
+      max = num[i]
+    }
+  }
+  return max
+}
+
+console.log(isLargest(num))
+
+//-----------------------------
+let name = prompt("Enter a word: ")
+console.log(isPalindrome(name))
+
+function isPalindrome(name) {
+  if (name.split("").reverse().join("") === name) {
+    return `${name} is a palindrome`
+  } else {
+    return `${name} is not a palindrome`
+  }
+}
+
+//----------------------
+function sumArray(numbers) {
+  return numbers.reduce((a, b) => a + b, 0)
+}
+
+console.log(sumArray([10, 20, 30]))
+
+//------------------------
+function sumOnlyEvens(numbers) {
+  let evenTotal = 0
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evenTotal += numbers[i]
+    }
+  }
+  return evenTotal
+}
+
+
+sumOnlyEvens([1, 2, 3, 4, 5, 6])
+
+//------------------------
+function countTarget(arr, target) {
+  let count = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      count++
+    }
+  }
+  return count
+}
+countTarget([5, 2, 5, 1, 5, 4], 5)
