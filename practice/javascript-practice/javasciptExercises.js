@@ -1251,3 +1251,93 @@ function removeFromArray(array, num) {
 }
 
 console.log(removeFromArray([1, 2, 3, 4], 3)); // should remove 3 and return [1,2,4]
+
+//------------------------
+prices = [10, 5, 2, 8]
+let total = 0
+prices.forEach(price => total += price)
+console.log(total)
+
+//-----------------------------
+
+names = ["alex", "sam", "john"]
+let capsNames = [...names].map(name => name.toUpperCase())
+console.log(capsNames)
+
+//-------------------------------
+
+let ages = [14, 21, 16, 30, 18, 15]
+let adultsOnly = ages.filter(age => age >= 18)
+console.log(adultsOnly)
+
+//---------------------------------
+const transactions = [100, -50, 20, -10, 300]
+
+let filtered = transactions.filter(transaction => transaction > 0).map(transaction => `$${transaction}`)
+
+console.log(filtered)
+
+//----------------------------------
+const inventory = [
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Phone", price: 800, inStock: false },
+  { name: "Keyboard", price: 150, inStock: true },
+  { name: "Monitor", price: 300, inStock: true }
+];
+
+function filterAffordable(arr) {
+  let affordableItems = []
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].inStock === true && arr[i].price < 500) {
+      affordableItems.push(arr[i])
+    }
+  }
+  return affordableItems
+}
+
+console.log(filterAffordable(inventory))
+
+//-------------------------------
+const inventory = [
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Phone", price: 800, inStock: false },
+  { name: "Keyboard", price: 150, inStock: true },
+  { name: "Monitor", price: 300, inStock: true }
+];
+
+let affordableItems = inventory.filter(item => item.inStock === true && item.price < 500)
+
+console.log(affordableItems)
+
+//---------------------------------
+const users = [
+  { id: 1, role: "ADMIN ", email: "ALEX@gmail.com" },
+  { id: 2, role: " user", email: "sam@Yahoo.com" },
+  { id: 3, role: "GUEST", email: "  JOHN@outlook.com" }
+];
+
+let cleanUsers = users.map(user => { 
+  return {
+    id: user.id,
+    role: user.role.toLowerCase().trim(),
+    email: user.email.toLowerCase()
+  }
+})
+
+console.log(cleanUsers)
+
+//-----------------------------------
+const roundScores = [120, 95, 43, 102, 19, 36, 142];
+
+let totalHighScores = 0
+let highScoreCount = 0
+
+roundScores.forEach(scores => {
+  if (scores >= 50) {
+    totalHighScores += scores
+    highScoreCount++
+  }
+})
+
+console.log(totalHighScores)
+console.log(highScoreCount)
