@@ -42,29 +42,56 @@
 //   itemInput.value = ""
 // })
 
-const container = document.querySelector("#container")
-const body = document.body
-const pText = document.createElement("p")
-const h3 = document.createElement("h3")
-const div = document.createElement("div")
-const divH1 = document.createElement("h1")
-const divP = document.createElement("p")
+// const container = document.querySelector("#container")
+// const body = document.body
+// const pText = document.createElement("p")
+// const h3 = document.createElement("h3")
+// const div = document.createElement("div")
+// const divH1 = document.createElement("h1")
+// const divP = document.createElement("p")
 
-container.append(pText, h3)
-container.append(div)
-div.append(divH1, divP)
+// container.append(pText, h3)
+// container.append(div)
+// div.append(divH1, divP)
 
 
-pText.innerText = "Hey I'm red!"
-pText.style.color = "red"
+// pText.innerText = "Hey I'm red!"
+// pText.style.color = "red"
 
-h3.innerText = "I'm a blue h3!"
-h3.style.color = "blue"
+// h3.innerText = "I'm a blue h3!"
+// h3.style.color = "blue"
 
-div.style.borderStyle = "solid"
-div.style.backgroundColor = "pink"
-div.style.borderColor = "black"
+// div.style.borderStyle = "solid"
+// div.style.backgroundColor = "pink"
+// div.style.borderColor = "black"
 
-divH1.innerText = "I'm in a div"
-divP.innerText = "ME TOO!"
+// divH1.innerText = "I'm in a div"
+// divP.innerText = "ME TOO!"
 
+// const btn = document.querySelector("button")
+
+// btn.addEventListener("click", function (e) {
+//     console.log(e.target);
+// });
+
+// btn.addEventListener("click", function (e) {
+//     e.target.style.background = "blue";
+// });
+
+// const p = document.querySelector("p")
+
+// p.addEventListener("mouseenter", function (e) {
+//     e.target.style.fontFamily = "Arial";
+// });
+
+// p.addEventListener("mouseleave", function (e) {
+//     e.target.style.fontFamily = "";
+// });
+
+const btn = document.querySelectorAll("button")
+
+btn.forEach(button => {
+  button.addEventListener("click", e => {
+    alert('Hey')
+  })
+})
