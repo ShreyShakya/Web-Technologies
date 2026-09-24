@@ -41,3 +41,30 @@
 //   console.log(itemList)
 //   itemInput.value = ""
 // })
+
+const container = document.querySelector("#container")
+const body = document.body
+const pText = document.createElement("p")
+const h3 = document.createElement("h3")
+const div = document.createElement("div")
+const divH1 = document.createElement("h1")
+const divP = document.createElement("p")
+
+container.append(pText, h3)
+container.append(div)
+div.append(divH1, divP)
+
+
+pText.innerText = "Hey I'm red!"
+pText.style.color = "red"
+
+h3.innerText = "I'm a blue h3!"
+h3.style.color = "blue"
+
+div.style.borderStyle = "solid"
+div.style.backgroundColor = "pink"
+div.style.borderColor = "black"
+
+divH1.innerText = "I'm in a div"
+divP.innerText = "ME TOO!"
+

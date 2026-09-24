@@ -1221,3 +1221,33 @@ function censorPrices(arr) {
 }
 
 console.log(censorPrices(prices))
+
+//------------------------
+function repeatString(name, num) {
+  let temp = ""
+  for (let i = 1; i <= num; i++) {
+    temp += name
+  }
+  return temp
+}
+
+console.log(repeatString('hey', 3))
+
+//------------------------
+function reverseString(string) {
+  return string.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+}
+
+console.log(reverseString('hello shrey'))
+
+//------------------------
+function removeFromArray(array, num) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === num) {
+      array.splice(i, 1)
+    }
+  }
+  return array
+}
+
+console.log(removeFromArray([1, 2, 3, 4], 3)); // should remove 3 and return [1,2,4]
