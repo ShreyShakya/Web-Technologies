@@ -47,12 +47,10 @@ function finalScore(humanScore, computerScore) {
   }
 }
 
-function playGame() {
+function playGame(humanChoice) {
   let humanScore = 0
   let computerScore = 0
 
-  for (let i = 0; i < 5; i++) {
-    let humanChoice = String(prompt("Please pick your move: ")).toLowerCase()
     let computerChoice = Math.floor(Math.random() * 3)
 
     console.log(getHumanChoice(humanChoice))
@@ -71,8 +69,18 @@ function playGame() {
     console.log(`Computer's score: ${computerScore}`)
   }
 
-  console.log(finalScore(humanScore, computerScore))
+const rockBtn = document.querySelector("#rock")
+const paperBtn = document.querySelector("#paper")
+const scissorsBtn = document.querySelector("#scissors")
 
-}
+rockBtn.addEventListener("click", function() {
+  playGame('rock')
+})
 
-playGame()
+paperBtn.addEventListener("click", function() {
+  playGame('paper')
+})
+
+scissorsBtn.addEventListener("click", function() {
+  playGame('scissors')
+})
