@@ -67,11 +67,16 @@ function playGame(humanChoice) {
 
     console.log(`Your current score: ${humanScore}`)
     console.log(`Computer's score: ${computerScore}`)
+
+    hScore.textContent = `Human Score: ${humanScore}`
+    cScore.textContent = `Computer Score: ${computerScore}`
   }
 
 const rockBtn = document.querySelector("#rock")
 const paperBtn = document.querySelector("#paper")
 const scissorsBtn = document.querySelector("#scissors")
+const hScore = document.querySelector('#human-score')
+const cScore = document.querySelector('#computer-score')
 
 rockBtn.addEventListener("click", function() {
   playGame('rock')
@@ -84,3 +89,4 @@ paperBtn.addEventListener("click", function() {
 scissorsBtn.addEventListener("click", function() {
   playGame('scissors')
 })
+
