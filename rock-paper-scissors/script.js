@@ -40,7 +40,7 @@ function selectWinner(humanChoice, computerChoice) {
 
 function finalScore(humanScore, computerScore) {
   if (humanScore > computerScore) {
-    return "Human won!"
+    return "You won!"
   } else if (computerScore > humanScore) {
     return "Computer won!"
   } else {
@@ -62,6 +62,7 @@ function playGame(humanChoice) {
 
   console.log(getHumanChoice(humanChoice))
   console.log(getComputerChoice(computerChoice))
+  compPick.textContent = getComputerChoice(computerChoice)
 
   let result = selectWinner(humanChoice, computerChoice)
   console.log(result)
@@ -77,6 +78,7 @@ function playGame(humanChoice) {
 
   roundsPlayed++
   if (roundsPlayed === 5) {
+    compPick.textContent = ""
     gameWinner.textContent = finalScore(humanScore, computerScore)
   }
 }
@@ -87,6 +89,7 @@ const scissorsBtn = document.querySelector("#scissors")
 const hScore = document.querySelector('#human-score')
 const cScore = document.querySelector('#computer-score')
 const gameWinner = document.querySelector('#winner')
+const compPick = document.querySelector('#show-computer-choice')
 
 rockBtn.addEventListener("click", function () {
   playGame('rock')

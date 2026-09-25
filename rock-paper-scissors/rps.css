@@ -1,0 +1,68 @@
+body {
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+}
+
+#container {
+    background-color: #315B8C;
+    height: 400px;
+    width: 400px;
+    border-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#score-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F2765E;
+    color: white;
+    font-weight: 16px;
+}
+
+.main-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+button {
+    border-style: solid;
+    border: 0;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #F5EBDD;
+    font-size: 2.5rem;
+}
+
+button:hover {
+    background-color: #E2B4BD;
+}
+
+#show-computer-choice {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+#winner {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+}
