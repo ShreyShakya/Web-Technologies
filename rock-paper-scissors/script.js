@@ -19,21 +19,22 @@ function getComputerChoice(computerChoice) {
     return "computer chose: scissors"
   }
 }
+
 function selectWinner(humanChoice, computerChoice) {
   if (humanChoice === 'rock' && computerChoice === 2) {
-    return roundWinner.textContent = "You Won"
+    return "You Won"
   } else if (humanChoice === 'scissors' && computerChoice === 1) {
-    return roundWinner.textContent = "You Won"
+    return "You Won"
   } else if (humanChoice === 'paper' && computerChoice === 0) {
-    return roundWinner.textContent = "You Won"
+    return "You Won"
   } else if (humanChoice === 'rock' && computerChoice === 1) {
-    return roundWinner.textContent = "Computer Won"
+    return "You Lose"
   } else if (humanChoice === 'scissors' && computerChoice === 0) {
-    return roundWinner.textContent = "Computer Won"
+    return "You Lose"
   } else if (humanChoice === 'paper' && computerChoice === 2) {
-    return roundWinner.textContent = "Computer Won"
+    return "You Lose"
   } else {
-    return roundWinner.textContent = "Draw"
+    return "Draw"
   }
 }
 
@@ -47,45 +48,55 @@ function finalScore(humanScore, computerScore) {
   }
 }
 
+let humanScore = 0
+let computerScore = 0
+let roundsPlayed = 0
+
 function playGame(humanChoice) {
-  let humanScore = 0
-  let computerScore = 0
 
-    let computerChoice = Math.floor(Math.random() * 3)
-
-    console.log(getHumanChoice(humanChoice))
-    console.log(getComputerChoice(computerChoice))
-
-    let result = selectWinner(humanChoice, computerChoice)
-    console.log(result)
-
-    if (result === 'You Won') {
-      humanScore++
-    } else if (result === 'You Lose') {
-      computerScore++
-    }
-
-    hScore.textContent = `Human Score: ${humanScore}`
-    cScore.textContent = `Computer Score: ${computerScore}`
+  if (roundsPlayed === 5) {
+    return
   }
+
+  let computerChoice = Math.floor(Math.random() * 3)
+
+  console.log(getHumanChoice(humanChoice))
+  console.log(getComputerChoice(computerChoice))
+
+  let result = selectWinner(humanChoice, computerChoice)
+  console.log(result)
+
+  if (result === 'You Won') {
+    humanScore++
+  } else if (result === 'You Lose') {
+    computerScore++
+  }
+
+  hScore.textContent = `Human Score: ${humanScore}`
+  cScore.textContent = `Computer Score: ${computerScore}`
+
+  roundsPlayed++
+  if (roundsPlayed === 5) {
+    gameWinner.textContent = finalScore(humanScore, computerScore)
+  }
+}
 
 const rockBtn = document.querySelector("#rock")
 const paperBtn = document.querySelector("#paper")
 const scissorsBtn = document.querySelector("#scissors")
-const scoreBoard = document.querySelector('#score-board')
-const roundWinner = document.querySelector('#round-winner')
 const hScore = document.querySelector('#human-score')
 const cScore = document.querySelector('#computer-score')
+const gameWinner = document.querySelector('#winner')
 
-rockBtn.addEventListener("click", function() {
+rockBtn.addEventListener("click", function () {
   playGame('rock')
 })
 
-paperBtn.addEventListener("click", function() {
+paperBtn.addEventListener("click", function () {
   playGame('paper')
 })
 
-scissorsBtn.addEventListener("click", function() {
+scissorsBtn.addEventListener("click", function () {
   playGame('scissors')
 })
 
