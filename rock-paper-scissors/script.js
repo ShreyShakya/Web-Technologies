@@ -21,19 +21,19 @@ function getComputerChoice(computerChoice) {
 }
 function selectWinner(humanChoice, computerChoice) {
   if (humanChoice === 'rock' && computerChoice === 2) {
-    return "You Won"
+    return roundWinner.textContent = "You Won"
   } else if (humanChoice === 'scissors' && computerChoice === 1) {
-    return "You Won"
+    return roundWinner.textContent = "You Won"
   } else if (humanChoice === 'paper' && computerChoice === 0) {
-    return "You Won"
+    return roundWinner.textContent = "You Won"
   } else if (humanChoice === 'rock' && computerChoice === 1) {
-    return "You Lose"
+    return roundWinner.textContent = "Computer Won"
   } else if (humanChoice === 'scissors' && computerChoice === 0) {
-    return "You Lose"
+    return roundWinner.textContent = "Computer Won"
   } else if (humanChoice === 'paper' && computerChoice === 2) {
-    return "You Lose"
+    return roundWinner.textContent = "Computer Won"
   } else {
-    return "Draw"
+    return roundWinner.textContent = "Draw"
   }
 }
 
@@ -65,9 +65,6 @@ function playGame(humanChoice) {
       computerScore++
     }
 
-    console.log(`Your current score: ${humanScore}`)
-    console.log(`Computer's score: ${computerScore}`)
-
     hScore.textContent = `Human Score: ${humanScore}`
     cScore.textContent = `Computer Score: ${computerScore}`
   }
@@ -75,6 +72,8 @@ function playGame(humanChoice) {
 const rockBtn = document.querySelector("#rock")
 const paperBtn = document.querySelector("#paper")
 const scissorsBtn = document.querySelector("#scissors")
+const scoreBoard = document.querySelector('#score-board')
+const roundWinner = document.querySelector('#round-winner')
 const hScore = document.querySelector('#human-score')
 const cScore = document.querySelector('#computer-score')
 
