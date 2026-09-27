@@ -1405,3 +1405,22 @@ function getAverageAge(users) {
 console.log(getAverageAge(users))
 
 //-----------------------------------
+function titleCase(str) {
+  let temp = str.toLowerCase().split(" ")
+  let two = []
+  for (let i = 0; i < temp.length; i++) {
+    let one = temp[i].split("")
+    two.push(one[0].toUpperCase() + [...one].splice(1).join(""))
+  }
+  return two.join(" ")
+}
+
+console.log(titleCase("sHoRt AnD sToUt")); 
+
+// let arr = ['apple']
+// let one = arr[0].split("")
+// let two = one[0].toUpperCase() + [...one].splice(1).join("")
+// console.log(two)
+
+
+//--------------------------------------
