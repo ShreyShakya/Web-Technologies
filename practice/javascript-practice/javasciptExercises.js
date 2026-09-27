@@ -1341,3 +1341,67 @@ roundScores.forEach(scores => {
 
 console.log(totalHighScores)
 console.log(highScoreCount)
+
+//------------------------------------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [john, pete, mary]
+
+let newArr = users.map(item => item.name)
+
+console.log(newArr)
+
+//------------------------------------
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [john, pete, mary]
+
+let newObj = users.map(item => ({fullName: `${item.name} ${item.surname}`, id: item.id}))
+
+console.log(newObj)
+
+//------------------------------------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ]
+
+let sortByAge = [...arr].sort((a, b) => a.age - b.age)
+
+console.log(sortByAge)
+
+//------------------------------------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let users = [ john, pete, mary ];
+
+function getAverageAge(users) {
+  let total = 0
+  for(let i = 0; i < users.length; i++) {
+    total += users[i].age
+  }
+  let avgAge = total / users.length
+  return avgAge
+}
+
+//--------------------------------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let users = [ john, pete, mary ];
+
+function getAverageAge(users) {
+  return users.reduce((a, b) => a + b.age, 0) / users.length
+}
+
+console.log(getAverageAge(users))
+
+//-----------------------------------
