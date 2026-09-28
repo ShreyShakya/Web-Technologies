@@ -1485,3 +1485,76 @@ console.log(yearsLived)
 //5. sort by years lived
 const lived = inventors.sort((a, b) => (a.passed - a.year) - (b.passed - b.year))
 console.log(lived)
+
+
+//-------------------------------------------------
+function add(a, b) {
+  return a + b
+}
+
+function subtract(a, b) {
+  return a - b
+}
+
+function sum(arr) {
+  return arr.reduce((total, num) => total + num, 0)
+}
+
+function multiply(arr) {
+  return arr.reduce((total, num) => total * num, 1)
+}
+
+function power(a, b) {
+  return a ** b
+}
+
+function factorial(a) {
+  let fact = 1
+  for (let i = a; i > 1; i--) {
+    fact = fact * i
+  }
+  return fact
+}
+
+//------------------------------------------------------------------
+function palindrome(str) {
+  let temp = str.replaceAll(" ", "")
+  if (temp.split("").reverse().join("").toLowerCase() === temp.toLowerCase()) {
+    return true
+  } else {
+    return false
+  }
+}
+
+console.log(palindrome('A nut for a jar of tuna'))
+
+//---------------------------------------
+function fibonacci(num) {
+  let temp1 = 1;
+  let temp2 = 1;
+  for (let i = 3; i <= num; i++) {
+    let temp3 = temp1 + temp2; 
+    temp1 = temp2;             
+    temp2 = temp3;             
+  }
+  
+  return temp2;
+}
+
+console.log(fibonacci(4)); 
+console.log(fibonacci(6)); 
+
+//--------------------------------
+function oldest(arr) {
+  let old = arr[0]
+  let oldestAge = old.yearOfDeath - old.yearOfBirth
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].yearOfDeath - arr[i].yearOfBirth > oldestAge) {
+      old = arr[i]
+      oldestAge = arr[i].yearOfDeath - arr[i].yearOfBirth
+    }
+  }
+  return [old]
+}
+
+console.log(oldest(people))
