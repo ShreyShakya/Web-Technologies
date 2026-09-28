@@ -1424,3 +1424,64 @@ console.log(titleCase("sHoRt AnD sToUt"));
 
 
 //--------------------------------------
+function camelize(str){
+  let temp = str.split("")
+  for(let i = 0; i < temp.length; i++) {
+    if (temp[i].includes('-')) {
+      temp[i+1] = temp[i+1].toUpperCase()
+      temp.splice(i, 1)
+    }
+  }
+  return temp.join("")
+}
+
+console.log(camelize('background-color'))
+
+//-------------------------------------
+let users = [
+  { name: "Alice", age: 22 },
+  { name: "Bob", age: 35 },
+  { name: "Charlie", age: 29 }
+];
+
+const sorted = users.reduce((groupedByAge, person) => {
+  const age = person.age
+  groupedByAge[age] = person
+  return groupedByAge
+}, {})
+
+console.log(sorted)
+
+//-----------------------------------------------------
+const inventors = [
+  { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+  { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+  { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+  { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+  { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+  { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+  { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+];
+
+//1. born in 1500's
+const bornInFifteenHundread = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600).map(inventor => `${inventor.first} ${inventor.last}`)
+
+console.log(bornInFifteenHundread)
+
+//2. first and last name
+const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
+
+console.log(fullName)
+
+//3. sort youngest to oldest by birth year
+const sorted = inventors.sort((a, b) => a.year - b.year)
+console.log(sorted)
+
+//4. total years lived
+const yearsLived = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0)
+
+console.log(yearsLived)
+
+//5. sort by years lived
+const lived = inventors.sort((a, b) => (a.passed - a.year) - (b.passed - b.year))
+console.log(lived)
