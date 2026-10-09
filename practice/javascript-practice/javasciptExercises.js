@@ -1558,3 +1558,131 @@ function oldest(arr) {
 }
 
 console.log(oldest(people))
+
+//--------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+]
+
+const mappedProducts = products.map(product => { return {name: product.name, price: product.price, priceWithTax: 13 / 100 * product.price + product.price}})
+
+console.log(mappedProducts)
+
+//--------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+];
+
+const discountedProducts = products.map(product => {
+  return {name: product.name, 
+          price: product.price, 
+          discountedPrice: product.price - (10 / 100 * product.price)}
+})
+
+console.log(discountedProducts)
+
+//------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+];
+
+const addCategory = products.map(product => {
+  let category
+  
+  if(product.price >= 100) {
+    category = 'premium'
+  } else {
+    category = 'Budget'
+  }
+  
+  return {name: product.name, 
+          price: product.price, 
+          category: category}
+})
+
+console.log(addCategory)
+
+//-----------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+];
+
+const newProducts = products.map(product => {
+  let onSale
+  if(product.price < 100) {
+    onSale = true
+  } else {
+    onSale = false
+  }
+  
+  return {name: product.name, 
+         price: product.price,
+         onSale: onSale}
+})
+
+console.log(newProducts)
+
+//----------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+];
+
+const expensiveProduct = products.find(product => product.price >= 100)
+
+console.log(expensiveProduct)
+
+//-----------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Headphones", price: 100 }
+];
+
+const salePrices = products.filter(product => product.price >= 100).map(product => {
+  return {
+    name:product.name,
+    salePrice: product.price - (15 / 100 * product.price)
+  }
+})
+
+console.log(salePrices)
+
+//--------------------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 }
+];
+
+const mouse = products.find(product => product.name === 'Mouse')
+
+const updatedMouse = {...mouse, price: 30}
+
+console.log(updatedMouse)
+
+//-----------------------------
+const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 }
+];
+
+const updatedKeyboard = {...products[2], price: 60, category: 'accessories'}
+
+console.log(updatedKeyboard)
