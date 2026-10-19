@@ -828,10 +828,10 @@ function sumAll(a, b) {
       total = total + i
     }
   } else if (a > b) {
-      for (let i = b; i <= a; i++) {
-        total = total + i
-      }
+    for (let i = b; i <= a; i++) {
+      total = total + i
     }
+  }
   return total
 }
 console.log(sumAll(3, 2))
@@ -875,7 +875,7 @@ function wordSpacer(word, count) {
     if (i === count) {
       newWord += word
     } else {
-      newWord += word + "-" 
+      newWord += word + "-"
     }
   }
   return newWord
@@ -886,19 +886,19 @@ console.log(wordSpacer('hey', 3))
 //--------------
 function countEven(num1, num2) {
   let even = []
-  if (num1 < num2){
+  if (num1 < num2) {
     for (let i = num1; i <= num2; i++) {
-    if ( i % 2 === 0) {
-      even.push(i)
+      if (i % 2 === 0) {
+        even.push(i)
+      }
     }
-  }
   } else if (num1 > num2) {
     for (let i = num1; i >= num2; i--) {
-    if ( i % 2 === 0) {
-      even.push(i)
+      if (i % 2 === 0) {
+        even.push(i)
+      }
     }
-  } 
-}
+  }
   return even
 }
 
@@ -937,7 +937,7 @@ function findLargest(array) {
   let max = array[0]
   for (let i = 0; i < array.length; i++) {
     if (array[i] > max) {
-    max = array[i]
+      max = array[i]
     }
   }
   return max
@@ -958,10 +958,10 @@ console.log(removeDuplicates(item))
 
 //---------Object & Data Handling--------
 
-let user = [{name: 'shrey', lastName: 'shakya'}, {name: 'john', lastName: 'doe'}, {name: 'jane', lastName: 'doe'}]
+let user = [{ name: 'shrey', lastName: 'shakya' }, { name: 'john', lastName: 'doe' }, { name: 'jane', lastName: 'doe' }]
 
 function fullName(arr, i) {
-  return arr[i].name + " " +arr[i].lastName
+  return arr[i].name + " " + arr[i].lastName
 }
 
 console.log(fullName(user, 1))
@@ -976,7 +976,7 @@ let laptop = {
 };
 
 //----------------------------
-let items = [{name: "Shoes", price: 500 }, {name: "Shirt", price: 70 }, {name: "Pants", price: 80 }, {name: "Hat", price: 125 }]
+let items = [{ name: "Shoes", price: 500 }, { name: "Shirt", price: 70 }, { name: "Pants", price: 80 }, { name: "Hat", price: 125 }]
 
 let total = 0
 
@@ -992,7 +992,7 @@ items.forEach(totalPrice)
 console.log(total)
 
 //-------------------------------
-let items = [{name: "Shoes", price: 500, inStock: true }, {name: "Shirt", price: 70, inStock: true  }, {name: "Pants", price: 80, inStock: false  }, {name: "Hat", price: 125, inStock: true  }]
+let items = [{ name: "Shoes", price: 500, inStock: true }, { name: "Shirt", price: 70, inStock: true }, { name: "Pants", price: 80, inStock: false }, { name: "Hat", price: 125, inStock: true }]
 
 function inStock(arr) {
   return arr.filter(item => item.inStock === true).map(item => item.name)
@@ -1038,7 +1038,7 @@ function vowelCount(name) {
     } else if (name[i] === 'u') {
       count++
     }
-  } 
+  }
   return count
 }
 
@@ -1047,10 +1047,10 @@ console.log(vowelCount(name))
 //------------------------------
 let num = 30
 
-for (let i = 1; i <= num; i++){
+for (let i = 1; i <= num; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
     console.log('FizzBuzz')
-  } else if (i % 3 === 0){
+  } else if (i % 3 === 0) {
     console.log('Fizz')
   } else if (i % 5 === 0) {
     console.log('Buzz')
@@ -1188,7 +1188,7 @@ function calcTotal(arr) {
       total += arr[i][j]
     }
   }
- return total
+  return total
 }
 
 console.log(calcTotal(grid))
@@ -1205,7 +1205,7 @@ function findInGrid(arr, target) {
   }
   return false
 }
-  
+
 console.log(findInGrid(grid, 9))
 
 //------------------------
@@ -1287,8 +1287,8 @@ const inventory = [
 
 function filterAffordable(arr) {
   let affordableItems = []
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i].inStock === true && arr[i].price < 500) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].inStock === true && arr[i].price < 500) {
       affordableItems.push(arr[i])
     }
   }
@@ -1316,7 +1316,7 @@ const users = [
   { id: 3, role: "GUEST", email: "  JOHN@outlook.com" }
 ];
 
-let cleanUsers = users.map(user => { 
+let cleanUsers = users.map(user => {
   return {
     id: user.id,
     role: user.role.toLowerCase().trim(),
@@ -1360,7 +1360,7 @@ let mary = { name: "Mary", surname: "Key", id: 3 };
 
 let users = [john, pete, mary]
 
-let newObj = users.map(item => ({fullName: `${item.name} ${item.surname}`, id: item.id}))
+let newObj = users.map(item => ({ fullName: `${item.name} ${item.surname}`, id: item.id }))
 
 console.log(newObj)
 
@@ -1369,7 +1369,7 @@ let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 28 };
 
-let arr = [ pete, john, mary ]
+let arr = [pete, john, mary]
 
 let sortByAge = [...arr].sort((a, b) => a.age - b.age)
 
@@ -1380,11 +1380,11 @@ let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 29 };
 
-let users = [ john, pete, mary ];
+let users = [john, pete, mary];
 
 function getAverageAge(users) {
   let total = 0
-  for(let i = 0; i < users.length; i++) {
+  for (let i = 0; i < users.length; i++) {
     total += users[i].age
   }
   let avgAge = total / users.length
@@ -1396,7 +1396,7 @@ let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 29 };
 
-let users = [ john, pete, mary ];
+let users = [john, pete, mary];
 
 function getAverageAge(users) {
   return users.reduce((a, b) => a + b.age, 0) / users.length
@@ -1415,7 +1415,7 @@ function titleCase(str) {
   return two.join(" ")
 }
 
-console.log(titleCase("sHoRt AnD sToUt")); 
+console.log(titleCase("sHoRt AnD sToUt"));
 
 // let arr = ['apple']
 // let one = arr[0].split("")
@@ -1424,11 +1424,11 @@ console.log(titleCase("sHoRt AnD sToUt"));
 
 
 //--------------------------------------
-function camelize(str){
+function camelize(str) {
   let temp = str.split("")
-  for(let i = 0; i < temp.length; i++) {
+  for (let i = 0; i < temp.length; i++) {
     if (temp[i].includes('-')) {
-      temp[i+1] = temp[i+1].toUpperCase()
+      temp[i + 1] = temp[i + 1].toUpperCase()
       temp.splice(i, 1)
     }
   }
@@ -1533,16 +1533,16 @@ function fibonacci(num) {
   let temp1 = 1;
   let temp2 = 1;
   for (let i = 3; i <= num; i++) {
-    let temp3 = temp1 + temp2; 
-    temp1 = temp2;             
-    temp2 = temp3;             
+    let temp3 = temp1 + temp2;
+    temp1 = temp2;
+    temp2 = temp3;
   }
-  
+
   return temp2;
 }
 
-console.log(fibonacci(4)); 
-console.log(fibonacci(6)); 
+console.log(fibonacci(4));
+console.log(fibonacci(6));
 
 //--------------------------------
 function oldest(arr) {
@@ -1561,85 +1561,91 @@ console.log(oldest(people))
 
 //--------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ]
 
-const mappedProducts = products.map(product => { return {name: product.name, price: product.price, priceWithTax: 13 / 100 * product.price + product.price}})
+const mappedProducts = products.map(product => { return { name: product.name, price: product.price, priceWithTax: 13 / 100 * product.price + product.price } })
 
 console.log(mappedProducts)
 
 //--------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ];
 
 const discountedProducts = products.map(product => {
-  return {name: product.name, 
-          price: product.price, 
-          discountedPrice: product.price - (10 / 100 * product.price)}
+  return {
+    name: product.name,
+    price: product.price,
+    discountedPrice: product.price - (10 / 100 * product.price)
+  }
 })
 
 console.log(discountedProducts)
 
 //------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ];
 
 const addCategory = products.map(product => {
   let category
-  
-  if(product.price >= 100) {
+
+  if (product.price >= 100) {
     category = 'premium'
   } else {
     category = 'Budget'
   }
-  
-  return {name: product.name, 
-          price: product.price, 
-          category: category}
+
+  return {
+    name: product.name,
+    price: product.price,
+    category: category
+  }
 })
 
 console.log(addCategory)
 
 //-----------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ];
 
 const newProducts = products.map(product => {
   let onSale
-  if(product.price < 100) {
+  if (product.price < 100) {
     onSale = true
   } else {
     onSale = false
   }
-  
-  return {name: product.name, 
-         price: product.price,
-         onSale: onSale}
+
+  return {
+    name: product.name,
+    price: product.price,
+    onSale: onSale
+  }
 })
 
 console.log(newProducts)
 
 //----------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ];
 
 const expensiveProduct = products.find(product => product.price >= 100)
@@ -1648,15 +1654,15 @@ console.log(expensiveProduct)
 
 //-----------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Headphones", price: 100 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 },
+  { name: "Headphones", price: 100 }
 ];
 
 const salePrices = products.filter(product => product.price >= 100).map(product => {
   return {
-    name:product.name,
+    name: product.name,
     salePrice: product.price - (15 / 100 * product.price)
   }
 })
@@ -1665,24 +1671,60 @@ console.log(salePrices)
 
 //--------------------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 }
 ];
 
 const mouse = products.find(product => product.name === 'Mouse')
 
-const updatedMouse = {...mouse, price: 30}
+const updatedMouse = { ...mouse, price: 30 }
 
 console.log(updatedMouse)
 
 //-----------------------------
 const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 }
+  { name: "Laptop", price: 800 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 50 }
 ];
 
-const updatedKeyboard = {...products[2], price: 60, category: 'accessories'}
+const updatedKeyboard = { ...products[2], price: 60, category: 'accessories' }
 
 console.log(updatedKeyboard)
+
+//-----------------------------------
+class User {
+  constructor(name, email) {
+    this.name = name
+    this.email = email
+  }
+
+  viewData() {
+    console.log('View my data')
+  }
+}
+
+let newUser = new User('Shrey', '23shakya@gmail.com')
+
+//---------------------------------------
+class User {
+  constructor(name, email) {
+    this.name = name
+    this.email = email
+  }
+
+  viewData() {
+    console.log('View my data')
+  }
+}
+
+let newUser = new User('Shrey', '23shakya@gmail.com')
+
+class Admin extends User {
+  editData() {
+    console.log('has access to edit')
+  }
+}
+
+let newAdmin = new Admin('Shrey-2', '23shakya@gmail.com-2')
