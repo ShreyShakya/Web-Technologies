@@ -1771,3 +1771,29 @@ const game = (function () {
 
 game.increaseScore()
 console.log(game.getScore())
+
+//-----------------------------------
+const swimmer = {
+    swim: function () {
+        return "Swimming";
+    }
+};
+
+const flyer = {
+    fly: function () {
+        return "Flying";
+    }
+};
+
+const superCreature = Object.assign({}, swimmer, flyer)
+
+superCreature.swim()
+superCreature.fly()
+
+//---------------------------------------
+const player = {
+    name: "Alex",
+    score: 5
+};
+
+const {name: playerName, score: playerScore} = player
