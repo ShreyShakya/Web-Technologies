@@ -1728,3 +1728,46 @@ class Admin extends User {
 }
 
 let newAdmin = new Admin('Shrey-2', '23shakya@gmail.com-2')
+
+//--------------------------------------
+function createPlayer(name) {
+  let score = 0
+  
+  return {
+    name,
+    increaseScore: function() {
+      score++
+    },
+    getScore: function() {
+      return score
+    }
+  }
+}
+
+const player1 = createPlayer('Alex')
+player1.increaseScore()
+player1.increaseScore()
+console.log(player1.getScore())
+
+//-----------------------------------------
+
+const game = (function () {
+  let score = 0
+  
+  function increaseScore() {
+    score++
+  }
+  
+  function getScore() {
+    return score
+  }
+  
+  return {
+    increaseScore, 
+    getScore
+  }
+})()
+
+
+game.increaseScore()
+console.log(game.getScore())
